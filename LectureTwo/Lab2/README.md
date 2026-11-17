@@ -42,8 +42,6 @@ ls -lh infodynamic
 
 ```
 Lab1/
-│── infodynamic     ← dynamic linking
-│── infostatic      ← static linking
-│── procinfo.c      ← multiple functions usage from standard library
+│── procinfo.c      │── ./infodynamic ./infostatic
 └── README.md
 ```
