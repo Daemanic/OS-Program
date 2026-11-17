@@ -2,7 +2,7 @@
 > Standard Library and POSIX extensions in C program
 
 ## [~] Objective
-Understanding how compiler transforms human-readable C code into machine instructions using multiple functions like `printf()`, `getpid()`, `time()` from the standard library.
+Putting compiler and linking theory into practice by examining where the C standard library and POSIX headers live on disk, and building the same program with static and dynamic linking to compare the resulting executables.
 
 ---
 

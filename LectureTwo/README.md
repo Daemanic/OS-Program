@@ -22,5 +22,5 @@ Understanding the structure and working mechanism of a C program, how it moves f
 
 | Lab | Focus |
 |---|---|
-| [Lab1](./Lab1) | Compiling a C file manually through each GCC stage, and inspecting the output at every step. |
-| [Lab2](./Lab2) | Writing programs that query their own PID/PPID, sleep, read input, and return different exit codes — observing them as live OS processes. |
+| [Lab1](./Lab1) | Investigating process lifecycle and OS interaction: running a C program as a process, reading its PID and PPID, controlling its runtime, reading input, and returning exit codes. |
+| [Lab2](./Lab2) | Understanding the C Standard Library and POSIX extensions: locating headers and libraries on disk, and comparing static and dynamic linking. |
