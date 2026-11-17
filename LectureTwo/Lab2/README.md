@@ -1,17 +1,25 @@
 # [2] Lab Task
-> Observing Process Memory Layout (Data, BSS, Heap, Stack)
+> Investigating Process Lifecycle and OS Interaction
+
+## [~] Introduction
+
+Putting process and resource theory into practice by writing C programs that interact directly with the Linux kernel — querying their own process identity, controlling their execution time, reading user input, and reporting success or failure back to the shell via exit codes.
 
 ## [~] Objective
 
-Observe where different variables live in memory and validate the OS memory layout of a running process.
+Bridge the gap between high-level C code and low-level OS process management using system calls like `getpid()`, `sleep()`, and `scanf()`, and by observing return codes. This lab demonstrates that a running C program is an active process managed by the Linux kernel — not just a static file.
 
 ---
 
 ## [?] Task Breakdown
 
-| File | Binary | What it demonstrates |
+| Task | File | What it demonstrates |
 |---|---|---|
-| addr_map.c | mapping | Declaring variables for each segment and identifying the highest and lowest segment. |
+| 1 | `task_1.c` | A process that stays alive for 30 seconds (a visible, long-running process you can observe with `ps`). |
+| 2 | `task_2.c` | Reading a process's own PID and its parent's PID (PPID) via `getpid()` / `getppid()`. |
+| 3 | `task_3.c` | Returning different exit codes (`0` vs `1`) depending on input, read back via `echo $?`. |
+| 4 | `task_4.c` | Reading string input from the user with `scanf()`. |
+| 5 | `task_5.c` | Interactive branching: one path sleeps and exits `0`, the other exits `1` immediately. |
 
 ---
 
@@ -19,45 +27,65 @@ Observe where different variables live in memory and validate the OS memory layo
 
 **Compilation:**
 ```bash
-gcc addr_map.c -o mapping
+gcc task_1.c -o task1
+gcc task_2.c -o task2
+gcc task_3.c -o task3
+gcc task_4.c -o task4
+gcc task_5.c -o task5
 ```
 
-**Execution:**
+**Task 1 — long-running process:**
 ```bash
-./mapping
+./task1 &
+ps aux | grep task1
 ```
 
----
-
-## [?] Sample Output
-
-> **Note:** run the compiled file a few times and compare the output (expect different results according to the architecture).
-
+**Task 2 — PID / PPID:**
 ```bash
-data (global_init):     0x1047c0000
-bss (global_uninit):    0x1047c0004
-heap (heap_var):        0x1050b5b80
-stack (local_var):      0x16b646c18
-
-stack - heap = 1717112984 bytes (0x66591098)
+./task2 &
+ps -p <pid-shown> -o pid,ppid,cmd
 ```
 
----
+**Task 3 — exit code from input sign:**
+```bash
+./task3
+# enter a positive integer → prints "success", exits 0
+echo $?
 
-## [~] Observations
+./task3
+# enter a negative integer → prints "failure", exits 1
+echo $?
+```
 
-| Task | Result |
-|---|---|---|
-| Highest address | Stack. It sits at the top of the address space and grows downward. |
-| Lowest adress | Data, floowed by BSS right after it, but is not one of the four varibles. |
-| Stack - Heap | A very large gap. Heap grows upward and stack grows downward, and the unused space between them is where each can expand. |
+**Task 4 — reading username:**
+```bash
+./task4
+# enter a username
+```
+
+**Task 5 — continue or exit:**
+```bash
+./task5
+# enter 1 → sleeps 5s, exits 0
+echo $?
+
+./task5
+# enter 0 → exits immediately with 1
+echo $?
+```
+
+> **Note:** `ps` keyword names differ between BSD (macOS) and GNU (Linux) `ps`. Use `comm`/`command` on macOS and `cmd`/`args` on Linux.
 
 ---
 
 ## [~] Project Structure
 
 ```
-Lab1/
-│── addr_map.c      │── ./mapping
+Lab2/
+│── task_1.c    │── ./task1
+│── task_2.c    │── ./task2
+│── task_3.c    │── ./task3
+│── task_4.c    │── ./task4
+│── task_5.c    │── ./task5
 └── README.md
 ```
