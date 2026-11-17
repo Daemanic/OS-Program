@@ -8,9 +8,9 @@ Understanding how compiler transforms human-readable C code into machine instruc
 
 | Contains | Location |
 |---|---|
-| Declarations, prototypes, macros | /usr/included/ |
-| Precompiled object code (archive) | /usr/lib/ |
-| Precompiled position-independent code | /lib/ |
+| Declarations, prototypes, macros | `/usr/included/` |
+| Precompiled object code (archive) | `/usr/lib/` |
+| Precompiled position-independent code | `/lib/` |
 
 ---
 
