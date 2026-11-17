@@ -9,7 +9,7 @@ Demonstration on how data type sizes vary across different system architectures 
 
 ## [?] Task Breakdown
 
-| File | Binary | What it demonstrates |
+| File | Binary | Demonstration |
 |---|---|---|
 | bytesize.c | bytesizes | The size in bytes of each data type on the current architecture. |
 | allocation.c | allocate | Pointers and memory allocation. |
