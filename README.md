@@ -16,6 +16,8 @@
 
 ```
 ST5039CMD/
+│── LectureOne/
+│ │── Lab1/         → Introduction to OS
 │── LectureTwo/
 │ │── Lab1/         → GCC compilation stages
 │ │── Lab2/         → Process lifecycle & OS interaction

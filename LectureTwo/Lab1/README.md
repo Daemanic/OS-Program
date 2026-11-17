@@ -3,42 +3,35 @@
 
 ## [~] Objective
 
-Break the normally single-command `gcc compile.c -o compile` process into its four individual stages, to see exactly what the compiler produces at each step before it becomes a final executable.
+Demonstration on how data type sizes vary across different system architecutes — directly impacting OS memory allocation, a virtual view of memory divided into segments (operating systems create a process address space) and differentiating between `stack` addresses, `heap` addresses and `data/bss` addresses.
 
 ---
 
-## [?] Stage Breakdown
+## [?] Task Breakdown
 
-| Stage | Command | Output | What it is |
-|---|---|---|---|
-| Preprocessing | `gcc -E compile.c -o compile.i` | `compile.i` | Source with macros expanded, headers included, comments stripped |
-| Compilation | `gcc -S compile.i -o compile.s` | `compile.s` | Human-readable assembly code |
-| Assembly | `gcc -c compile.s -o compile.o` | `compile.o` | Machine code in object-file format |
-| Linking | `gcc compile.o -o compile` | `compile` | Final, runnable executable |
+| File | Binary | What it demonstrates |
+|---|---|---|
+| bytesize.c | bytesizes | The size in bytes of each data type on the current architecture. |
+| allocation.c | allocate | Pointers and memory allocation. |
+| variable_addr.c | address | The addresses of different variables, showing which segment each one belongs to. |
 
 ---
 
 ## [?] Reproducing Steps
 
-**Compilation (stage by stage):**
+**Compilation and execution:**
 ```bash
-gcc -E compile.c -o compile.i
-gcc -S compile.i -o compile.s
-gcc -c compile.s -o compile.o
-gcc compile.o -o compile
+gcc allocation.c -o allocation
+./allocation
+
+gcc bytesize.c -o bytesizes
+./bytesizes
+
+gcc variable_addr.c -o address
+./address
 ```
 
-**Inspecting the output at each stage:**
-```bash
-cat compile.i    # preprocessed source
-cat compile.s    # assembly
-cat compile.o    # object file (binary — expect unreadable output)
-```
-
-**Running the final executable:**
-```bash
-./compile
-```
+> **Note:** address change between runs because of `address space layout randomization`. compare the relative positions of stack, heap and data/bss rather than exact values. type sizes can also differ between operating systems and architectures.
 
 ---
 
@@ -46,10 +39,8 @@ cat compile.o    # object file (binary — expect unreadable output)
 
 ```
 Lab1/
-│── compile         ← final executable (stage 4)
-│── compile.c       ← original source code
-│── compile.i       ← preprocessed source (stage 1)
-│── compile.o       ← object file (stage 3)
-│── compile.s       ← assembly code (stage 2)
+│── allocation.c        │── ./allocate
+│── bytesize.c          │── ./bytesizes
+│── variable_addr.c     │── ./address
 └── README.md
 ```
