@@ -1,43 +1,30 @@
 # [1] Lab Task
-> GCC Compilation Structure in C-Programming
+> Standard Library and POSIX extensions in C program
 
 ## [~] Objective
-
-Break the normally single-command `gcc compile.c -o compile` process into its four individual stages, to see exactly what the compiler produces at each step before it becomes a final executable.
-
----
-
-## [?] Stage Breakdown
-
-| Stage | Command | Output | What it is |
-|---|---|---|---|
-| Preprocessing | `gcc -E compile.c -o compile.i` | `compile.i` | Source with macros expanded, headers included, comments stripped |
-| Compilation | `gcc -S compile.i -o compile.s` | `compile.s` | Human-readable assembly code |
-| Assembly | `gcc -c compile.s -o compile.o` | `compile.o` | Machine code in object-file format |
-| Linking | `gcc compile.o -o compile` | `compile` | Final, runnable executable |
+Understanding how compiler transforms human-readable C code into machine instructions using multiple functions like `printf()`, `getpid()`, `time()` from the standard library.
 
 ---
 
-## [?] Reproducing Steps
-
-**Compilation (stage by stage):**
+## [?] Standard Library Files
+**Physical Location:**
 ```bash
-gcc -E compile.c -o compile.i
-gcc -S compile.i -o compile.s
-gcc -c compile.s -o compile.o
-gcc compile.o -o compile
+ls /usr/include/
+ls /usr/include/stdio.h /usr/include/unistd.h
+grep "printf" /usr/include/stdio.h | head -2
+grep "getpid" /usr/include/unistd.h | head -2
 ```
 
-**Inspecting the output at each stage:**
+**Static Linking:**
 ```bash
-cat compile.i    # preprocessed source
-cat compile.s    # assembly
-cat compile.o    # object file (binary — expect unreadable output)
+gcc -static procinfo.c -o infostatic
+ls -lh infostatic
 ```
 
-**Running the final executable:**
+**Dynamic Linking:**
 ```bash
-./compile
+gcc procinfo.c -o infodynamic
+ls -lh infodynamic
 ```
 
 ---
@@ -46,10 +33,8 @@ cat compile.o    # object file (binary — expect unreadable output)
 
 ```
 Lab1/
-│── compile         ← final executable (stage 4)
-│── compile.c       ← original source code
-│── compile.i       ← preprocessed source (stage 1)
-│── compile.o       ← object file (stage 3)
-│── compile.s       ← assembly code (stage 2)
+│── infodynamic     ← dynamic linking
+│── infostatic      ← static linking
+│── procinfo.c      ← multiple functions usage from standard library
 └── README.md
 ```
