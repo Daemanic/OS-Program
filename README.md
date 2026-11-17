@@ -19,8 +19,8 @@ ST5039CMD/
 │── LectureOne/
 │ │── Lab1/         → Introduction to OS
 │── LectureTwo/
-│ │── Lab1/         → GCC compilation stages
-│ │── Lab2/         → Process lifecycle & OS interaction
+│ │── Lab1/         → Investigating Process Lifecycle
+│ │── Lab2/         → Standard Library and POXIS extensions
 │
 │── LectureThree/
 │ │── Lab1/         → Understanding System Internals
