@@ -11,9 +11,11 @@ Understanding the structure and working mechanism of a C program, how it moves f
 * The `main()` function and its return type.
 * The four stages of GCC compilation (preprocessing → compilation → assembly → linking).
 * Use of `GCC` flags to stop at and inspect each stage.
+* The role of the C Standard Library and where its headers and library files are located on disk.
+* The difference between static and dynamic linking, and how each affects the size and dependencies of an executable.
 * The distinction between a program (static file on disk) and a process (program in execution).
 * How the OS loads and executes a program, and assigns it a PID/PPID.
-* How system calls (`getpid()`, `getppid()`, `sleep()`) let a C program interact directly with the kernel.
+* How POSIX extensions such as `getpid()`, `getppid()`, and `sleep()` let a C program interact directly with the kernel.
 * How a process communicates success/failure back to the shell via its exit code.
 
 ---
