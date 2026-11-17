@@ -3,7 +3,7 @@
 
 ## [~] Objective
 
-Demonstration on how data type sizes vary across different system architecutes — directly impacting OS memory allocation, a virtual view of memory divided into segments (operating systems create a process address space) and differentiating between `stack` addresses, `heap` addresses and `data/bss` addresses.
+Demonstration on how data type sizes vary across different system architectures — directly impacting OS memory allocation, a virtual view of memory divided into segments (operating systems create a process address space) and differentiating between `stack` addresses, `heap` addresses and `data/bss` addresses.
 
 ---
 
@@ -31,7 +31,7 @@ gcc variable_addr.c -o address
 ./address
 ```
 
-> **Note:** address change between runs because of `address space layout randomization`. compare the relative positions of stack, heap and data/bss rather than exact values. type sizes can also differ between operating systems and architectures.
+> **Note:** address change between runs because of `address space layout randomization`, type sizes can also differ between operating systems and architectures.
 
 ---
 
