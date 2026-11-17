@@ -6,6 +6,7 @@ Understanding how compiler transforms human-readable C code into machine instruc
 
 ---
 
+## [?] Two Part C Standard Library
 | Contains | Location |
 |---|---|
 | Declarations, prototypes, macros | `/usr/included/` |
