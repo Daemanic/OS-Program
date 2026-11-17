@@ -5,14 +5,6 @@ Understanding the structure and working mechanism of a C program, how it moves f
 
 ---
 
-| Contains | Location |
-|---|---|
-| Declarations, prototypes, macros | /usr/included/ |
-| Precompiled object code (archive) | /usr/lib/ |
-| Precompiled position-independent code | /lib/ |
-
----
-
 ## [~] Learning Objectives
 
 * The basic structure of a C program.
