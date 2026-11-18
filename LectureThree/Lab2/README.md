@@ -89,3 +89,11 @@ $3 = (const char **) 0xaaaaaaac0040 <text_string_literal>
 ```
 
 > Note: perform workspace demobilization (`continue` & `quit`), after reviewing the output of the examine command.
+
+## [~] Project Structure
+
+```
+Lab2/
+│── demo.c      │── ./testdemo
+└── README.md
+```
