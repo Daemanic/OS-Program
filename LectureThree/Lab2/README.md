@@ -88,4 +88,4 @@ $2 = 0xaaaaaaaa08d8 " Text_Segment"
 $3 = (const char **) 0xaaaaaaac0040 <text_string_literal>
 ```
 
-> Note: perform workspace demobilization: `continue` `quit`, after reviewing the output of the examine command.
+> Note: perform workspace demobilization (`continue` - `quit`), after reviewing the output of the examine command.
