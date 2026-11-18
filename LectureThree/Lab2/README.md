@@ -86,9 +86,6 @@ $2 = 0xaaaaaaaa08d8 " Text_Segment"
 0xaaaaaaaa08d8:	" Text_Segment"
 (gdb) print &text_string_literal
 $3 = (const char **) 0xaaaaaaac0040 <text_string_literal>
-(gdb) continue
-Continuing.
-~ ready for segment inspection ~
-[Inferior 1 (process 33917) exited normally]
 ```
 
+> Note: after reviewing the output of the examine command, perform workspace demobilization: `continue` `quit`
