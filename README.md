@@ -18,6 +18,7 @@
 ST5039CMD/
 │── LectureOne/
 │ │── Lab1/         → Introduction to OS
+│
 │── LectureTwo/
 │ │── Lab1/         → Investigating Process Lifecycle
 │ │── Lab2/         → Standard Library and POXIS extensions
@@ -25,6 +26,7 @@ ST5039CMD/
 │── LectureThree/
 │ │── Lab1/         → Understanding System Internals
 │ │── Lab2/         → Observing Process Memory Layout
+│ │── Lab3/         → Mapping Process Runtime Topography
 │
 └── README.md       → Course overview
 ```
