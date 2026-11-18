@@ -21,7 +21,7 @@ ST5039CMD/
 │
 │── LectureTwo/
 │ │── Lab1/         → Investigating Process Lifecycle
-│ │── Lab2/         → Standard Library and POXIS extensions
+│ │── Lab2/         → Standard Library and POXIS Extensions
 │
 │── LectureThree/
 │ │── Lab1/         → Understanding System Internals
