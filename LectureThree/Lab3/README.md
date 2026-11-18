@@ -35,7 +35,7 @@ Breakpoint 1, main () at mapping.c:18
 **Mapping Static BSS Segment Bounds:**
 ```bash
 (gdb) info files
-Symbols from "/home/abslute/Projects/OS-Program/LectureThree/Lab3/testproc".
+Symbols from "OS-Program/LectureThree/Lab3/testproc".
 Native process:
 	Using the running image of child process 54204.
 	While running this, GDB does not access memory from...
