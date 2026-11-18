@@ -11,6 +11,8 @@ Understanding how the primitive data types in C map onto real memory, and how th
 * Data type sizes across system architectures (e.g. `32-bit` and `64-bit`), and memory allocation.
 * The five segments of a process's memory layout: `text`, `data`, `bss`, `heap`, `stack`.
 * Disassembling compiled application subroutines into machine opcodes.
+* Virtualising physical RAM and fixed-size boundaries like BSS segments for running applications and unit variable.
+* Dynamic runtimes like the hardware managed Stack and programmer policed Heap.
 
 ---
 
@@ -20,3 +22,4 @@ Understanding how the primitive data types in C map onto real memory, and how th
 |---|---|
 | [Lab1](./Lab1) | A practical approach to understanding system internals. |
 | [Lab2](./Lab2) | Text and Initial data segments via Hardware Disassembly. |
+| [Lab3](./Lab3) | Mapping Process Runtime Topography Using Low-Level Hardware Debugging Infrastructure. |
