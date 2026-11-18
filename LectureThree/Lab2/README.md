@@ -7,11 +7,15 @@ Evaluate the structural composition and isolation boundaries separating the Text
 
 ---
 
+## [?] Laboratory Procedures
+
+**Building Executable:**
 ```bash
 gcc -g demo.c -o testdemo
 gdb ./testdemo
 ```
 
+**Setting Breakpoints and Runtime:**
 ```bash
 (gdb) break 17
 Breakpoint 1 at 0x8a0: file demo.c, line 18.
@@ -29,6 +33,7 @@ Breakpoint 1, main () at demo.c:18
 (gdb) 
 ```
 
+**Mapping Static Text and Data Sections:**
 ```bash
 (gdb) info files
 Symbols from "OS-Program/LectureThree/Lab2/testdemo".
@@ -69,6 +74,7 @@ Local exec file:
 	0x0000fffff7fbe7c0 - 0x0000fffff7fbea6a is .dynstr in /lib/ld-linux-aarch64.so.1
 ```
 
+**Auditing Initialized Data Memory:**
 ```bash
 (gdb) print &data_global_var
 $1 = (int *) 0xaaaaaaac0038 <data_global_var>
