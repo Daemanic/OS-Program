@@ -36,7 +36,7 @@ Native process:
 	Using the running image of child process 33460.
 	While running this, GDB does not access memory from...
 Local exec file:
-	`/home/abslute/Projects/OS-Program/LectureThree/Lab2/testdemo', file type elf64-littleaarch64.
+	`OS-Program/LectureThree/Lab2/testdemo', file type elf64-littleaarch64.
 	Entry point: 0xaaaaaaaa0700
 	0x0000aaaaaaaa02a8 - 0x0000aaaaaaaa02cc is .note.gnu.build-id
 	0x0000aaaaaaaa02cc - 0x0000aaaaaaaa02e7 is .interp
