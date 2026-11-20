@@ -7,7 +7,6 @@
 
 | Course | ST5039CMD - Programming and Operating Systems |
 |---|---|
-| Lecturer | Rupak Rajbanshi |
 | Purpose | Archive of lecture notes, lab tasks, and source code references. |
 
 ---
